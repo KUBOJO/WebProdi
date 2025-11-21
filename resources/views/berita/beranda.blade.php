@@ -157,7 +157,7 @@
 
     /* PRESTASI */
     .prestasi-wrapper {
-        height: 480px;
+        height: auto;
         border-left: 8px solid var(--primary-color);
         border-radius: 20px;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
@@ -259,7 +259,7 @@
         color: var(--dark-color);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         .hero-title {
             font-size: 2rem;
         }
@@ -283,19 +283,59 @@
             height: 200px;
         }
         
-        .prestasi-wrapper {
-            flex-direction: column;
-            height: auto;
-        }
-        
-        .prestasi-deskripsi, .prestasi-gambar {
-            width: 100%;
-        }
-        
-        .prestasi-deskripsi {
-            padding: 2rem;
-        }
+        /* MEDIA QUERY FINAL – FIX BAGIAN PRESTASI UNTUK HP DAN TABLET */
+@media (max-width: 992px) {
+
+    /* Wrapper prestasi otomatis menyesuaikan tinggi */
+    .prestasi-wrapper {
+        flex-direction: column;      /* Susunan jadi vertikal */
+        height: auto !important;     /* Tidak dibatasi tinggi */
+        min-height: unset !important;
     }
+
+    /* Bagian kiri dan kanan lebar penuh */
+    .prestasi-deskripsi,
+    .prestasi-gambar {
+        width: 100% !important;
+    }
+
+    /* Atur tinggi area gambar agar tetap terlihat */
+    .prestasi-gambar {
+        height: 260px;               /* Bebas kamu ubah 220 / 240 / 280 */
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Set gambar slide agar muncul */
+    .prestasi-slide {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        opacity: 1 !important;           /* Pastikan gambar terlihat */
+        transform: none !important;      /* Hindari bug animasi scroll */
+    }
+
+    /* Tombol kanan/kiri tetap tampil */
+    .btn-nav.left {
+        left: 10px;
+    }
+
+    .btn-nav.right {
+        right: 10px;
+    }
+
+    .btn-nav {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+}
+
 </style>
 
 <!-- Hero Section -->

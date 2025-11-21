@@ -117,6 +117,7 @@
 <!-- Hero Section -->
 <section class="prestasi-hero">
     <div class="container text-center">
+        <div class="container mt-5 pt-5">
         <h1 class="display-5 fw-bold text-success mb-3">Detail Prestasi</h1>
         <p class="lead text-muted">Prestasi membanggakan dari mahasiswa kami</p>
     </div>
